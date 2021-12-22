@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:06:41 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 21:23:38 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/22 21:26:48 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static void	fill_stack(t_node **stack, char **tab, bool *error)
 	t_node	*node;
 
 	size = 0;
-	while (tab[size])
+	while (tab[size] && !error)
 		size++;
-	while (--size >= 0)
+	while (--size >= 0 && !error)
 	{
 		node = new_node(ft_atoi(tab[size], error));
 		add(node, stack);
