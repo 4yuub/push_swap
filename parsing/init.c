@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:06:41 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 21:22:24 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/22 21:23:38 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	check_duplicates(t_node *stack, bool *error)
 	while (stack && !error)
 	{
 		tmp = stack->next;
-		while (tmp)
+		while (tmp && !error)
 		{
 			if (tmp->number == stack->number)
 				*error = true;
