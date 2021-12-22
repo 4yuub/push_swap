@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:28:57 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 21:11:00 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/22 21:12:27 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,5 @@ char	**ft_split(char const *s, char c, t_list **garbage)
 			add_garbge(tab[i - 1], garbage);
 		s += len;
 	}
-	tab[i] = NULL;
-	add_garbge(tab, garbage);
-	return (tab);
+	return (tab[i] = NULL, add_garbge(tab, garbage), tab);
 }
