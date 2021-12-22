@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:36:46 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 20:44:25 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/22 21:00:58 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	main(int ac, char **av)
 	error = false;
 	init(&a, &b, av, &garbage);
 	// code here
-	free_all(garbage, a, b);
+	free_all(garbage, &a, &b);
 }
