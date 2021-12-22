@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:06:41 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 21:26:48 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/22 21:27:27 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static void	fill_stack(t_node **stack, char **tab, bool *error)
 	t_node	*node;
 
 	size = 0;
-	while (tab[size] && !error)
+	while (tab[size] && !*error)
 		size++;
-	while (--size >= 0 && !error)
+	while (--size >= 0 && !*error)
 	{
 		node = new_node(ft_atoi(tab[size], error));
 		add(node, stack);
@@ -31,10 +31,10 @@ static void	check_duplicates(t_node *stack, bool *error)
 {
 	t_node	*tmp;
 
-	while (stack && !error)
+	while (stack && !*error)
 	{
 		tmp = stack->next;
-		while (tmp && !error)
+		while (tmp && !*error)
 		{
 			if (tmp->number == stack->number)
 				*error = true;
