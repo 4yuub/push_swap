@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 20:10:56 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 13:40:58 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:16:59 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	is_space(char c)
 		|| c == '\f' || c == '\r' || c == ' ');
 }
 
-long	ft_atoi(const char *str, bool *error)
+int	ft_atoi(const char *str, bool *error)
 {
 	int		i;
 	int		n;

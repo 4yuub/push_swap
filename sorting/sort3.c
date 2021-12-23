@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 03:05:01 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 03:22:02 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:17:27 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort3(t_node **a, t_node **b, int size)
 {
-	long	max;
+	int	max;
 
 	if (is_sorted(*a))
 		return ;

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:40:40 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 03:23:05 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:18:28 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // stack:
 typedef struct s_node
 {
-	long			number;
+	int				number;
 	struct s_node	*next;
 }					t_node;
 
@@ -35,7 +35,7 @@ void	add_garbge(void *ptr, t_list **garbage);
 void	free_all(t_list **garbage, t_node **a, t_node **b);
 
 // stack utils:
-t_node	*new_node(long n);
+t_node	*new_node(int n);
 void	add(t_node *node, t_node **stack);
 void	pop(t_node **stack);
 void	push(t_node **stack1, t_node **stack2, char *str);
@@ -50,12 +50,12 @@ void	print(char *s);
 // parsing:
 void	init(t_node **a, t_node**b, char **av, t_list **garbage);
 char	**ft_split(char const *s, char c, t_list **garbage);
-long	ft_atoi(const char *str, bool *error);
+int		ft_atoi(const char *str, bool *error);
 
 // sorting:
 int		get_size(t_node *stack);
 bool	is_sorted(t_node *stack);
-long	get_max(t_node *stack);
+int		get_max(t_node *stack);
 void	sort3(t_node **a, t_node **b, int size);
 
 #endif

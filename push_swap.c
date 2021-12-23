@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:36:46 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 03:07:50 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:18:37 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_all(t_node *a)
 {
 	while (a)
 	{
-		printf("%ld\n", a->number);
+		printf("%d\n", a->number);
 		a = a->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 03:08:21 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 03:16:57 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:16:39 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	get_size(t_node *stack)
 	return (i);
 }
 
-long	get_max(t_node *stack)
+int	get_max(t_node *stack)
 {
-	long	max;
+	int	max;
 
 	max = stack->number;
 	while (stack)
