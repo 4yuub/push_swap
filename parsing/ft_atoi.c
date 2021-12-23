@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 20:10:56 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 20:20:08 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 13:37:46 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ long	ft_atoi(const char *str, bool *error)
 		result *= 10;
 		result += str[i] - '0';
 		i++;
+		if (str[i] && (result * n > 2147483647 || result * n < -2147483648))
+			*error = true;
 	}
-	if (str[i] || result * n > 2147483647 || result * n < -2147483648)
-		*error = true;
 	return (result * n);
 }
