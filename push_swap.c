@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:36:46 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 19:21:57 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:41:33 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	main(int ac, char **av)
 	size = get_size(a);
 	if (size <= 3)
 		sort3(&a, size);
-	print_all(a);
+	if (size <= 5)
+		sort5(&a, &b, size);
+	//print_all(a);
 	free_all(&garbage, &a, &b);
 }

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:40:40 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 19:21:27 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:34:06 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ int		ft_atoi(const char *str, bool *error);
 int		get_size(t_node *stack);
 bool	is_sorted(t_node *stack);
 int		get_max(t_node *stack);
+int		get_min(t_node *stack);
+bool	is_in_bottom(int number, int size, t_node *stack);
 void	sort3(t_node **a, int size);
+void	sort5(t_node **a, t_node **b, int size);
 
 #endif

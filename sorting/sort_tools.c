@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 03:08:21 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 19:16:39 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 19:38:53 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,32 @@ int	get_max(t_node *stack)
 		stack = stack->next;
 	}
 	return (max);
+}
+
+int	get_min(t_node *stack)
+{
+	int	min;
+
+	min = stack->number;
+	while (stack)
+	{
+		if (stack->number < min)
+			min = stack->number;
+		stack = stack->next;
+	}
+	return (min);
+}
+
+bool	is_in_bottom(int number, int size, t_node *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i++ <= size / 2)
+	{
+		if (stack->number == number)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
