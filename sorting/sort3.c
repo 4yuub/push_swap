@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:36:46 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 03:07:50 by akarafi          ###   ########.fr       */
+/*   Created: 2021/12/23 03:05:01 by akarafi           #+#    #+#             */
+/*   Updated: 2021/12/23 03:22:02 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
-void	print_all(t_node *a)
+void	sort3(t_node **a, t_node **b, int size)
 {
-	while (a)
+	long	max;
+
+	if (is_sorted(*a))
+		return ;
+	(void) b;
+	max = get_max(*a);
+	if (size == 3)
 	{
-		printf("%ld\n", a->number);
-		a = a->next;
+		if (max == (*a)->number)
+			rotate(*a, "ra");
+		else if (max == (*a)->next->number)
+			reverse_rotate(*a, "rra");
 	}
-}
-
-int	main(int ac, char **av)
-{
-	t_node	*a;
-	t_node	*b;
-	t_list	*garbage;
-	int		size;
-
-	if (ac < 2)
-		return (0);
-	init(&a, &b, av, &garbage);
-	// code here
-	size = get_size(a);
-	if (size <= 3)
-		sort3(&a, &b, size);
-	print_all(a);
-	free_all(&garbage, &a, &b);
+	if ((*a)->number > (*a)->next->number)
+		swap(*a, "sa");
 }

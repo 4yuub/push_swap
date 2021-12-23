@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:40:40 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 20:38:10 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/23 03:23:05 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ void	print(char *s);
 void	init(t_node **a, t_node**b, char **av, t_list **garbage);
 char	**ft_split(char const *s, char c, t_list **garbage);
 long	ft_atoi(const char *str, bool *error);
+
+// sorting:
+int		get_size(t_node *stack);
+bool	is_sorted(t_node *stack);
+long	get_max(t_node *stack);
+void	sort3(t_node **a, t_node **b, int size);
 
 #endif
