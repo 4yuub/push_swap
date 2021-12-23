@@ -27,12 +27,9 @@ int	main(int ac, char **av)
 	t_node	*a;
 	t_node	*b;
 	t_list	*garbage;
-	bool	error;
 
 	if (ac < 2)
 		return (0);
-	error = false;
-	garbage = NULL;
 	init(&a, &b, av, &garbage);
 	// code here
 	print_all(a);

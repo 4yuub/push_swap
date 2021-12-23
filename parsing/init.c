@@ -52,6 +52,7 @@ void	init(t_node **a, t_node**b, char **av, t_list **garbage)
 
 	*a = NULL;
 	*b = NULL;
+	*garbage = NULL;
 	size = 0;
 	err = false;
 	while (av[size])

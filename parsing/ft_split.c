@@ -32,10 +32,10 @@ static char	*get_memory(char const *s, unsigned int start, size_t len)
 	return (malloc(i + 1));
 }
 
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char const *s, int start, int len)
 {
 	char	*sub;
-	size_t	i;
+	int	i;
 
 	if (!s)
 		return (0);
