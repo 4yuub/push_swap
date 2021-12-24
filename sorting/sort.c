@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 00:25:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/24 02:22:17 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/24 03:40:11 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 	int	*sorted;
 	int	mid;
 	int	size2;
+	int	tmp;
 
 	sorted = get_sorted(*a, size, garbage);
 	while (size > 3)
@@ -62,7 +63,8 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 		size2 = size / 2;
 		mid = sorted[size2];
 		sorted += size2 + 1;
-		while (size > size2 && size > 3)
+		tmp = size;
+		while (tmp-- > 0)
 		{
 			if ((*a)->number <= mid)
 			{

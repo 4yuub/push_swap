@@ -16,5 +16,5 @@ for _ in range(500):
 	if p1 == "OK":
 		print(bcolors.OKGREEN + p1 + ": " + p2)
 	else:
-		print(bcolors.WARNING + p1)
+		print(bcolors.WARNING + p1, "args:", args)
 	sleep(.1)
