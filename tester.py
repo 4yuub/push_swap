@@ -9,8 +9,8 @@ class bcolors:
 
 n = int(input("number of args\n>>> "))
 print(bcolors.OKCYAN + "testing with " + str(n) + " numbers:")
-for _ in range(5000):
-	args = " ".join(choices([str(i) for i in range(-10000, 10000)], k=n))
+for _ in range(500):
+	args = subprocess.getoutput(f'ruby -e "puts (1..{n}).to_a.shuffle" | tr "\n" " "')
 	p1 = subprocess.getoutput(f"./push_swap {args} | ./checker {args}")
 	p2 = subprocess.getoutput(f"./push_swap {args} | wc -l")
 	if p1 == "OK":
