@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 00:25:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/24 07:00:42 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/25 01:17:36 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,41 @@ static int	*get_sorted(t_node *stack, int size, t_list **garbage)
 	return (sorted);
 }
 
-void	back_maxs_from_b(t_node **a, t_node **b)
+void	back_maxs_from_b_in_chunks(t_node **a, t_node **b, t_list **garbage)
+{
+	int	*sorted;
+	int	size;
+	int	tmp;
+	int	mid;
+
+	size = get_size(*b);
+	sorted = get_sorted(*b, size, garbage);
+	while (*b)
+	{
+		tmp = size;
+		mid = sorted[size / 2];
+		while (tmp--)
+		{
+			if ((*b)->number >= mid || size < 3)
+			{
+				push(b, a, "pa");
+				size--;
+			}
+			else
+				rotate(*b, "rb");
+		}
+	}
+}
+
+void	back_maxs_from_b(t_node **a, t_node **b, t_list **garbage)
 {
 	int	max;
 	int	size;
+	int	start_size;
 
 	size = get_size(*b);
-	while (*b)
+	start_size = size;
+	while (*b && size > (start_size + 3) / 2)
 	{
 		max = get_max(*b);
 		while ((*b)->number != max)
@@ -48,6 +76,7 @@ void	back_maxs_from_b(t_node **a, t_node **b)
 		push(b, a, "pa");
 		size--;
 	}
+	back_maxs_from_b_in_chunks(a, b, garbage);
 }
 
 void	sort(t_node **a, t_node **b, int size, t_list **garbage)
@@ -56,17 +85,19 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 	int	mid;
 	int	size2;
 	int	tmp;
+	int	start_size;
 
 	sorted = get_sorted(*a, size, garbage);
-	while (size > 3)
+	start_size = size;
+	while (size > 3 && !is_sorted(*a))
 	{
 		size2 = size / 2;
 		mid = sorted[size2];
-		sorted += size2 + 1;
+		sorted += size2;
 		tmp = size;
 		while (tmp-- > 0)
 		{
-			if ((*a)->number <= mid)
+			if ((*a)->number < mid)
 			{
 				push(a, b, "pb");
 				size--;
@@ -76,5 +107,6 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 		}
 	}
 	sort3(a, 3);
-	back_maxs_from_b(a, b);
+	back_maxs_from_b(a, b, garbage);
+	sort5(a, b, start_size);
 }
