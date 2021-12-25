@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 07:31:41 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/25 08:29:30 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/25 22:26:55 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 void	do_action(char *action, t_node **a, t_node **b)
 {
+	if (ft_strlen(action) == 4)
+	{
+		if (ft_memcmp(action, "rra", 3) || ft_memcmp(action, "rrr", 3))
+			reverse_rotate(*a, 0);
+		if (ft_memcmp(action, "rrb", 3) || ft_memcmp(action, "rrr", 3))
+			reverse_rotate(*b, 0);
+		return ;
+	}
 	if (ft_memcmp(action, "sa", 2) || ft_memcmp(action, "ss", 2))
 		swap(*a, 0);
 	if (ft_memcmp(action, "sb", 2) || ft_memcmp(action, "ss", 2))
@@ -27,10 +35,6 @@ void	do_action(char *action, t_node **a, t_node **b)
 		rotate(*a, 0);
 	if (ft_memcmp(action, "rb", 2) || ft_memcmp(action, "rr", 2))
 		rotate(*b, 0);
-	if (ft_memcmp(action, "rra", 3) || ft_memcmp(action, "rrr", 3))
-		reverse_rotate(*a, 0);
-	if (ft_memcmp(action, "rrb", 3) || ft_memcmp(action, "rrr", 3))
-		reverse_rotate(*b, 0);
 }
 
 bool	is_action(char *s)

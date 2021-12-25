@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 07:37:26 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/25 08:28:55 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/25 22:17:15 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	ft_memcmp(const char *s1, const char *s2, int n)
 	i = -1;
 	if (!s1 || !s2)
 		return (0);
-	//printf("%s|%s\n", s1, s2);
 	while (++i < n)
 		if (s1[i] != s2[i])
 			return (0);
-	return (1);
+	if (s1[n] == '\n')
+		return (1);
+	return (0);
 }
