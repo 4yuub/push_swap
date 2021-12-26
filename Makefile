@@ -6,7 +6,7 @@
 #    By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 01:23:01 by akarafi           #+#    #+#              #
-#    Updated: 2021/12/26 01:39:13 by akarafi          ###   ########.fr        #
+#    Updated: 2021/12/26 01:40:52 by akarafi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ CHECKER_SRCS =	$(addprefix output/, $(Output))\
 		$(addprefix stack/, $(Stack))\
 		$(addprefix parsing/, $(Parse))\
 		$(addprefix bonus/, $(BONUS))\
-		$(addprefix bonus/, $(GNL))
+		$(addprefix bonus/, $(GNL))\
+		garbage.c
 
 OBJS = $(SRCS:.c=.o)
 C_OBJS = $(CHECKER_SRCS:.c=.o)
