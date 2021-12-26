@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 00:25:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/26 01:20:49 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 03:39:28 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,25 +79,30 @@ void	back_maxs_from_b(t_node **a, t_node **b, t_list **garbage)
 	back_maxs_from_b_in_chunks(a, b, garbage);
 }
 
-void	sort(t_node **a, t_node **b, int size, t_list **garbage)
+typedef struct s_v
 {
 	int	*sorted;
 	int	mid;
 	int	size2;
 	int	tmp;
 	int	start_size;
+}	t_v;
 
-	sorted = get_sorted(*a, size, garbage);
-	start_size = size;
+void	sort(t_node **a, t_node **b, int size, t_list **garbage)
+{
+	t_v	v;
+
+	v.sorted = get_sorted(*a, size, garbage);
+	v.start_size = size;
 	while (size > 3 && !is_sorted(*a))
 	{
-		size2 = size / 2;
-		mid = sorted[size2];
-		sorted += size2;
-		tmp = size;
-		while (tmp-- > 0)
+		v.size2 = size / 2;
+		v.mid = v.sorted[v.size2];
+		v.sorted += v.size2;
+		v.tmp = size;
+		while (v.tmp-- > 0)
 		{
-			if ((*a)->number < mid)
+			if ((*a)->number < v.mid)
 			{
 				push(a, b, "pb");
 				size--;
@@ -108,5 +113,5 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 	}
 	sort3(a, 3);
 	back_maxs_from_b(a, b, garbage);
-	sort5(a, b, start_size);
+	sort5(a, b, v.start_size);
 }

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:28:57 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/26 01:21:15 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 03:40:00 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*get_memory(char const *s, unsigned int start, size_t len)
 static char	*ft_substr(char const *s, int start, int len)
 {
 	char	*sub;
-	int	i;
+	int		i;
 
 	if (!s)
 		return (0);
