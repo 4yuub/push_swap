@@ -6,11 +6,11 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 19:06:41 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 21:27:27 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 01:21:11 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	fill_stack(t_node **stack, char **tab, bool *error)
 {

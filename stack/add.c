@@ -6,11 +6,11 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:14:33 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/22 17:15:41 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 01:20:28 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	add(t_node *node, t_node **stack)
 {

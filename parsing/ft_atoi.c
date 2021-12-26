@@ -6,11 +6,11 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 20:10:56 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 19:16:59 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 01:21:20 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static int	is_space(char c)
 {

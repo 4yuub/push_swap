@@ -6,11 +6,11 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 07:28:17 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/25 08:15:28 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 01:22:15 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	main(int ac, char **av)
 {

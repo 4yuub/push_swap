@@ -6,11 +6,11 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 03:05:01 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/23 19:21:17 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/26 01:20:54 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	sort3(t_node **a, int size)
 {
