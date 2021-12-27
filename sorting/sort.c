@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 00:25:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/26 03:39:28 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/27 18:48:29 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,13 @@ void	back_maxs_from_b_in_chunks(t_node **a, t_node **b, t_list **garbage)
 	}
 }
 
-void	back_maxs_from_b(t_node **a, t_node **b, t_list **garbage)
+void	back_maxs_from_b(t_node **a, t_node **b, t_list **garbage, int size2)
 {
 	int	max;
 	int	size;
-	int	start_size;
 
 	size = get_size(*b);
-	start_size = size;
-	while (*b && size > (start_size + 3) / 2)
+	while (*b && size > size2)
 	{
 		max = get_max(*b);
 		while ((*b)->number != max)
@@ -112,6 +110,6 @@ void	sort(t_node **a, t_node **b, int size, t_list **garbage)
 		}
 	}
 	sort3(a, 3);
-	back_maxs_from_b(a, b, garbage);
+	back_maxs_from_b(a, b, garbage, v.start_size/2);
 	sort5(a, b, v.start_size);
 }
