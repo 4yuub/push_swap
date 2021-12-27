@@ -57,7 +57,7 @@ $(NAME):$(OBJS)
 	@echo ''
 
 bonus:$(C_OBJS)
-	@$(CC) $(CFLAGS) $(C_OBJS) -o Checker
+	@$(CC) $(CFLAGS) $(C_OBJS) -o checker
 	@echo "Checker compiled successfully"
 
 

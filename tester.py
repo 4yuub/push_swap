@@ -13,7 +13,7 @@ sum = 0
 max = 0
 min = 1_000_000
 for _ in range(1000):
-	args = subprocess.getoutput(f'ruby -e "puts (1..{n}).to_a.shuffle().join(\' \')"')
+	args = subprocess.getoutput(f'ruby -e "puts (1..{n}).to_a.shuffle.join(" ")"')
 	p1 = subprocess.getoutput(f"./push_swap {args} | ./checker {args}")
 	p2 = subprocess.getoutput(f"./push_swap {args} | wc -l")
 	if p1 == "OK":
